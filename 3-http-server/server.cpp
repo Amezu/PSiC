@@ -1,8 +1,10 @@
 #include "HTTPServer.h"
 
 int main() {
-  HTTPServer server;
-  server.makeNonBlocking();
-  server.listenOnAddress(65280, "127.0.0.1");
+  TCPSocket socket;
+  socket.makeNonBlocking();
+  socket.listenOnAddress(65280, "127.0.0.1");
+
+  HTTPServer server(socket);
   server.serve();
 }

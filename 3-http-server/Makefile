@@ -10,7 +10,7 @@ CXXFLAGS+=$(DEP_FLAGS)
 
 all: server
 
-server: HTTPServer.o server.o
+server: TCPSocket.o HTTPServer.o server.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 run: server
